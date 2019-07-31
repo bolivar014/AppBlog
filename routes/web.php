@@ -19,4 +19,5 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/posts', 'PostController@index');
+Route::get('/posts', 'PostController@index'); // Listar Posts
+Route::get('/posts/{id}/show', 'PostController@show'); // Ver Post del ID

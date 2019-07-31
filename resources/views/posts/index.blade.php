@@ -13,7 +13,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach($posts as $post)
+                        @forelse($posts as $post)
                             <tr>
                                 <th scope="row">{{ $post->id }}</th>
                                 <td>{{ $post->posts }}</td>
@@ -21,13 +21,22 @@
                                 <td>
                                     <button class="btn btn-danger btn-block" type="button">Eliminar</button>
                                     <button class="btn btn-info btn-block" type="button">Editar</button>
-                                    <button class="btn btn-success btn-block" type="button">Ver</button>
+                                    <a class="btn btn-success btn-block" href="{{ url('/posts/'.$post->id.'/show') }}">Ver</a>
                                 </td>
                             </tr>
-                        @endforeach
+                        @empty
+                            <p>No Hay Mensajes Destacados...</p>
+                        @endforelse
                     </tbody>
                 </table>
+                
+                @if(count($posts))
+                    <div class="mt-2 mx-auto">
+                        {{ $posts->links('pagination::bootstrap-4') }}
+                    </div>
+                @endif
             </div>
+          
         </div>
     
     @endsection
