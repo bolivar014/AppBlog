@@ -2,12 +2,11 @@
     @section('content')
         <div class="card">
             <div class="card-header text-center">
-                <strong class="text-center">Registrar Post</strong> 
+                <strong class="text-center">Formulario de Registro</strong> 
             </div>
             
             <div class="card-body">
                <form action="{{ url('/posts') }}" method="POST">
-                    <h5 class="card-title">Formulario de Registro</h5>
                     <p class="card-text">Diligencie los siguientes datos, por favor...</p>
                     <div class="row">
                         <div class="col-6">
@@ -26,7 +25,14 @@
                             
                         </div>
                     </div>
-                    <button type="submit" class="btn btn-primary btn-block">Guardar</a>
+                    <div class="row">
+                        <div class="col-6">
+                            <a href="{{ url('/posts') }}" class="btn btn-danger btn-block">Regresar</a>
+                        </div>
+                        <div class="col-6">               
+                            <button type="submit" class="btn btn-primary btn-block">Guardar</button>
+                        </div>
+                    </div>
                </form>
             </div>
         </div>

@@ -3,10 +3,11 @@
         <div class="container">
             <h1 class="title h2 text-center">Tablas de Posts...</h1>
             
-            <hr class="my-5">
+            <hr class="my-2">
             
+            <a href="{{ url('/posts/create') }}" class="btn btn-success">Agregar Post</a>
+                
             <div class="row table-bordered table-hover" style="margin-top: 25px;">
-                <a href="{{ url('/posts/create') }}" class="btn btn-success">Agregar Post</a>
                 <table class="table table-bordered table-responsive-sm text-center">
                     <thead>
                         <tr>
