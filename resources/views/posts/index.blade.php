@@ -1,8 +1,12 @@
 @extends('layouts.app')
     @section('content')
         <div class="container">
-            <h1 class="title h2 text-center">Tablas de Publicaciones...</h1>
+            <h1 class="title h2 text-center">Tablas de Posts...</h1>
+            
+            <hr class="my-5">
+            
             <div class="row table-bordered table-hover" style="margin-top: 25px;">
+                <a href="{{ url('/posts/create') }}" class="btn btn-success">Agregar Post</a>
                 <table class="table table-bordered table-responsive-sm text-center">
                     <thead>
                         <tr>
@@ -19,9 +23,15 @@
                                 <td>{{ $post->posts }}</td>
                                 <td>{{ $post->created_at }}</td>
                                 <td>
-                                    <button class="btn btn-danger btn-block" type="button">Eliminar</button>
-                                    <button class="btn btn-info btn-block" type="button">Editar</button>
-                                    <a class="btn btn-success btn-block" href="{{ url('/posts/'.$post->id.'/show') }}">Ver</a>
+                                    <button class="btn btn-danger" type="button" title="Eliminar">
+                                        <i class="fa fa-trash-o"></i>
+                                    </button>
+                                    <button class="btn btn-info " type="button" title="Editar">
+                                        <i class="fa fa-user"></i>
+                                    </button>
+                                    <a class="btn btn-success " href="{{ url('/posts/'.$post->id.'/show') }}" title="Ver">
+                                        <i class="fa fa-eye"></i>
+                                    </a>
                                 </td>
                             </tr>
                         @empty

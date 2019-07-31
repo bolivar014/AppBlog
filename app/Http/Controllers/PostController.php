@@ -9,7 +9,7 @@ class PostController extends Controller
     //
     public function index()
     {
-        $posts = Post::paginate(1);
+        $posts = Post::paginate(5);
 
         return view('posts.index')->with(compact('posts'));
     }
@@ -21,4 +21,24 @@ class PostController extends Controller
         //  dd($post);
         return view('posts.show')->with(compact('post'));
     }
+
+    public function create()
+    {
+        return view('posts.create');
+    }
+
+    public function store(Request $request)
+    {
+        // dd($request);
+        $post = new Post();
+        $post->posts = $request->input('txtPost');
+        $post->image = $request->input('txtImage');
+        $post->save();
+
+        
+        $posts = Post::paginate(5);
+        return view('posts.index')->with(compact('posts'));
+    }
+
+  
 }
