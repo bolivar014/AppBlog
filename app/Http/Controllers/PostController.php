@@ -41,6 +41,26 @@ class PostController extends Controller
     }
 
     //
+    public function edit($id)
+    {
+        $post = Post::find($id);
+
+        return view('posts.edit')->with(compact('post'));
+    }
+
+    //
+    public function update(Request $request, $id)
+    {
+        $post = Post::find($id);
+
+        $post->posts = $request->input('txtPost');
+        $post->image = $request->input('txtImage');
+        $post->update();
+
+        return redirect('/posts');
+    }
+
+    //
     public function destroy($id)
     {
         $post =  Post::find($id);

@@ -24,3 +24,5 @@ Route::get('/posts/{id}/show', 'PostController@show'); // Ver Post del ID
 Route::get('/posts/create', 'PostController@create');  // Carga formulario de registro
 Route::post('/posts', 'PostController@store');         // Realiza registro del post
 Route::delete('/posts/{id}/destroy','PostController@destroy'); // Eliminar post
+Route::get('/posts/{id}/edit','PostController@edit');          // Cargar vista Editar Post con su respectivo ID
+Route::post('/posts/{id}/update','PostController@update');          // Cargar vista Editar Post con su respectivo ID

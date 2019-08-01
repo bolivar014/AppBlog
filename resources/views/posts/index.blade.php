@@ -30,7 +30,7 @@
                                         <button class="btn btn-danger" rel="tooltip" type="submit" title="Eliminar">
                                             <i class="fa fa-trash-o"></i>
                                         </button>
-                                        <a href="#" class="btn btn-info " rel="tooltip" type="button" title="Editar">
+                                        <a href="{{ url('/posts/'.$post->id.'/edit') }}" class="btn btn-info " rel="tooltip" type="button" title="Editar">
                                             <i class="fa fa-user"></i>
                                         </a>
                                         <a class="btn btn-success" href="{{ url('/posts/'.$post->id.'/show') }}" rel="tooltip" title="Ver">
