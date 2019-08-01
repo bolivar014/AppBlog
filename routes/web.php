@@ -23,3 +23,4 @@ Route::get('/posts', 'PostController@index'); // Listar Posts
 Route::get('/posts/{id}/show', 'PostController@show'); // Ver Post del ID
 Route::get('/posts/create', 'PostController@create');  // Carga formulario de registro
 Route::post('/posts', 'PostController@store');         // Realiza registro del post
+Route::delete('/posts/{id}/destroy','PostController@destroy'); // Eliminar post

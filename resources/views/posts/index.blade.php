@@ -24,15 +24,19 @@
                                 <td>{{ $post->posts }}</td>
                                 <td>{{ $post->created_at }}</td>
                                 <td>
-                                    <button class="btn btn-danger" type="button" title="Eliminar">
-                                        <i class="fa fa-trash-o"></i>
-                                    </button>
-                                    <button class="btn btn-info " type="button" title="Editar">
-                                        <i class="fa fa-user"></i>
-                                    </button>
-                                    <a class="btn btn-success " href="{{ url('/posts/'.$post->id.'/show') }}" title="Ver">
-                                        <i class="fa fa-eye"></i>
-                                    </a>
+                                    <form action="{{ url('/posts/'.$post->id.'/destroy') }}" method="POST">
+                                        {{ csrf_field() }}
+                                        {{ method_field('DELETE') }}
+                                        <button class="btn btn-danger" rel="tooltip" type="submit" title="Eliminar">
+                                            <i class="fa fa-trash-o"></i>
+                                        </button>
+                                        <a href="#" class="btn btn-info " rel="tooltip" type="button" title="Editar">
+                                            <i class="fa fa-user"></i>
+                                        </a>
+                                        <a class="btn btn-success" href="{{ url('/posts/'.$post->id.'/show') }}" rel="tooltip" title="Ver">
+                                            <i class="fa fa-eye"></i>
+                                        </a>
+                                    </form>
                                 </td>
                             </tr>
                         @empty
